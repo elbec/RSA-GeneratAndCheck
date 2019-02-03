@@ -203,7 +203,7 @@
             this.Controls.Add(this.textBoxPublicKey);
             this.Controls.Add(this.textBoxPrivateKey);
             this.Name = "MainWindow";
-            this.Text = "RSA TOOL V1.0 - (c) Elbe Christopher";
+            this.Text = "RSA - Generate and Check Key";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_createKeys)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign)).EndInit();
