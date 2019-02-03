@@ -23,6 +23,7 @@ namespace RSA_Tool
 
         }
 
+        //Ceate private and public key
         private void createKeys_Click(object sender, EventArgs e)
         {
             textBoxPrivateKey.Text = "";
@@ -34,16 +35,14 @@ namespace RSA_Tool
 
             pictureBox_createKeys.BackColor = Color.Salmon;
 
-            //Rücksetzen Color
+            //Reset ColorBars
             pictureBox_check.BackColor = Color.Transparent;
             pictureBox_Sign.BackColor = Color.Transparent;
             pictureBox_Sign1.BackColor = Color.Transparent;
 
         }
 
-
         //Bytes to HEX
-
         public static string BytesToHex(byte[] bytes)
         {
             var hexstring = new StringBuilder(bytes.Length);
@@ -54,6 +53,7 @@ namespace RSA_Tool
             return hexstring.ToString();
         }
 
+        //Sign source text with private key
         private void signtext_Click(object sender, EventArgs e)
         {
                 try
@@ -72,15 +72,12 @@ namespace RSA_Tool
 
                 pictureBox_Sign.BackColor = Color.YellowGreen;
                 pictureBox_Sign1.BackColor = Color.YellowGreen;
-
-                //Rücksetzen Color
+                //Reset ColorBars
                 pictureBox_check.BackColor = Color.Transparent;
                 pictureBox_createKeys.BackColor = Color.Transparent;
         }
 
-
-        //Hex to Bytes
-
+        //HEX to Bytes
         public static byte[] StringToByteArray(String hex)
         {
             int numberChars = hex.Length;
@@ -92,6 +89,7 @@ namespace RSA_Tool
             return bytes;
         }
 
+        //Check if source text and signature matches
         private void checksign_Click(object sender, EventArgs e)
         {
             bool signOK = false;
@@ -113,8 +111,7 @@ namespace RSA_Tool
 
             pictureBox_Sign.BackColor = Color.DodgerBlue;
             pictureBox_check.BackColor = Color.DodgerBlue;
-
-            //Rücksetzen Color
+            //Reset ColorBars
             pictureBox_createKeys.BackColor = Color.Transparent;
             pictureBox_Sign1.BackColor = Color.Transparent;
 
