@@ -1,6 +1,6 @@
 ﻿namespace RSA_Tool
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -182,7 +182,7 @@
             this.pictureBox_check.TabIndex = 14;
             this.pictureBox_check.TabStop = false;
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,7 +202,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPublicKey);
             this.Controls.Add(this.textBoxPrivateKey);
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.Text = "RSA TOOL V1.0 - (c) Elbe Christopher";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_createKeys)).EndInit();
