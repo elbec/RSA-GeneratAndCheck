@@ -56,20 +56,27 @@ namespace RSA_Tool
 
         private void signtext_Click(object sender, EventArgs e)
         {
-            var rsa = new RSACryptoServiceProvider();
-            rsa.FromXmlString(textBoxPrivateKey.Text);
+                try
+                {
+                    var rsa = new RSACryptoServiceProvider();
+                    rsa.FromXmlString(textBoxPrivateKey.Text);
 
-            var encryptedSymmetricKey = rsa.SignData(Encoding.Unicode.GetBytes(textBoxSourceText.Text), new SHA1CryptoServiceProvider());
-            textBoxSignature.Text = BytesToHex(encryptedSymmetricKey);
+                    var encryptedSymmetricKey = rsa.SignData(Encoding.Unicode.GetBytes(textBoxSourceText.Text), new SHA1CryptoServiceProvider());
+                    textBoxSignature.Text = BytesToHex(encryptedSymmetricKey);
+                }
+                catch
+                {
+                    MessageBox.Show("Wrong private and/or public key!");
+                    return;
+                }
 
-            pictureBox_Sign.BackColor = Color.YellowGreen;
-            pictureBox_Sign1.BackColor = Color.YellowGreen;
+                pictureBox_Sign.BackColor = Color.YellowGreen;
+                pictureBox_Sign1.BackColor = Color.YellowGreen;
 
-            //Rücksetzen Color
-            pictureBox_check.BackColor = Color.Transparent;
-            pictureBox_createKeys.BackColor = Color.Transparent;
+                //Rücksetzen Color
+                pictureBox_check.BackColor = Color.Transparent;
+                pictureBox_createKeys.BackColor = Color.Transparent;
         }
-
 
 
         //Hex to Bytes
@@ -87,13 +94,22 @@ namespace RSA_Tool
 
         private void checksign_Click(object sender, EventArgs e)
         {
-            var rsa = new RSACryptoServiceProvider();
-            rsa.FromXmlString(textBoxPublicKey.Text);
+            bool signOK = false;
+            try
+            {
+                var rsa = new RSACryptoServiceProvider();
+                rsa.FromXmlString(textBoxPublicKey.Text);
 
-            byte[] signText = StringToByteArray(textBoxSignature.Text);
-            byte[] originalText = Encoding.Unicode.GetBytes(textBoxSourceText.Text);
+                byte[] signText = StringToByteArray(textBoxSignature.Text);
+                byte[] originalText = Encoding.Unicode.GetBytes(textBoxSourceText.Text);
 
-            bool signOK = rsa.VerifyData(originalText, new SHA1CryptoServiceProvider(), signText);
+                signOK = rsa.VerifyData(originalText, new SHA1CryptoServiceProvider(), signText);
+            }
+            catch
+            {
+                MessageBox.Show("Wrong private and/or public key!");
+                return;
+            }
 
             pictureBox_Sign.BackColor = Color.DodgerBlue;
             pictureBox_check.BackColor = Color.DodgerBlue;
@@ -102,7 +118,7 @@ namespace RSA_Tool
             pictureBox_createKeys.BackColor = Color.Transparent;
             pictureBox_Sign1.BackColor = Color.Transparent;
 
-            MessageBox.Show("Signature OK: " + signOK);
+            MessageBox.Show("Signature and source text matches: " + signOK);
         }
 
     }

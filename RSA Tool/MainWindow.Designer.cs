@@ -70,18 +70,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "private Key";
+            this.label1.Text = "private key";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(380, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "public Key";
+            this.label2.Text = "public key";
             // 
             // createKeys
             // 
@@ -107,9 +107,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(380, 273);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Signatur";
+            this.label3.Text = "signature";
             // 
             // signtext
             // 
@@ -135,9 +135,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(38, 273);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Source Text";
+            this.label4.Text = "source text";
             // 
             // checksign
             // 
