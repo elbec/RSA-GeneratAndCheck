@@ -89,7 +89,7 @@ namespace RSA_Tool
             return bytes;
         }
 
-        //Check, if source text and signature matches
+        //Check if source text and signature matches
         private void checksign_Click(object sender, EventArgs e)
         {
             bool signOK = false;
