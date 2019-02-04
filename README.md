@@ -6,7 +6,7 @@ You can use the software for generate and check RSA Keys
 How to generate a RSA-Signature with private key:
 
 1. Step:
-Press the Button "Create Keys" --> Now you have generate a private and a public key.
+Press the button "Create Keys" --> Now you have generate a private and a public key.
 
 2. Step:
 Write the text which should be signed by the private key in the textbox named "source text".
