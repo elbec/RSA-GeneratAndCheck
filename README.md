@@ -1,20 +1,20 @@
 # RSA-GenerateAndCheck
-You can use the software for generate and check RSA Keys
 
+The RSA-GenerateAndCheck App can be used for generate and/or check RSA-Keys.
 
+Tags: RSA, RSA-Key, generate key, check key, private key, public key, encrypt
 
-How to generate a RSA-Signature with private key:
+![appOverview](https://github.com/elbec/RSA-GenerateAndCheck/blob/master/RSA%20Tool/Documentation/rsa_app.JPG?raw=true)
 
-1. Step:
-Press the button "Create Keys" --> Now you have generate a private and a public key.
+## Instuction
 
-2. Step:
-Write the text which should be signed by the private key in the textbox named "source text".
+### How to generate a RSA-Signature with private key:
+1. Press the button "Create Keys" --> Now you have generated a private and the associated public key.
 
-3. Step:
-Press the button "Sign Text"
+2. Write the text which should be encoded by the private key in the textbox named "source text".
+
+3. Press the button "Sign Text"
 RSA-Signature generated
-
 
 
 
