@@ -13,20 +13,15 @@ Tags: RSA, RSA-Key, generate key, check key, private key, public key, encrypt
 
 2. Write the text which should be encoded by the private key in the textbox named "source text".
 
-3. Press the button "Sign Text"
+3. Press the button "Encrypt Source Text"
 RSA-Signature generated
 
 
 
-How to check the RSA-Signature with public key:
+### How to check the RSA-Signature for validity with the public key:
 
-1. Step:
-Enter the public key in the "public Key" text box.
-Enter the signature in the "signature" text box.
-Enter the right source text in the "source text" text box.
-
-2. Step:
-Press the button "Check Sign"
-
-3. Step:
-You get an output whether the signature matches or not!
+1. Enter the public key in the "public Key" text box.
+2. Enter the signature in the "signature" text box.
+3. Enter the right source text in the "source text" text box.
+4. Press the button "Verify Signature"
+You will now reveice a message whether the signature is valid.
