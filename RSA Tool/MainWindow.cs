@@ -13,7 +13,42 @@ namespace RSA_Tool
             InitializeComponent();
         }
 
-        //Ceate private and public key
+        /// <summary>
+        /// Convert HEX to Bytes
+        /// </summary>
+        /// <param name="hex"></param>
+        /// <returns></returns>
+        public static byte[] StringToByteArray(String hex)
+        {
+            int numberChars = hex.Length;
+            var bytes = new byte[numberChars / 2];
+            for (int i = 0; i < numberChars; i += 2)
+            {
+                bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
+            }
+            return bytes;
+        }
+
+        /// <summary>
+        /// Convert Bytes to HEX
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
+        public static string BytesToHex(byte[] bytes)
+        {
+            var hexstring = new StringBuilder(bytes.Length);
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                hexstring.Append(bytes[i].ToString("X2"));
+            }
+            return hexstring.ToString();
+        }
+
+        /// <summary>
+        /// Creates the private and the associated public key
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void createKeys_Click(object sender, EventArgs e)
         {
             textBoxPrivateKey.Text = "";
@@ -32,19 +67,12 @@ namespace RSA_Tool
 
         }
 
-        //Bytes to HEX
-        public static string BytesToHex(byte[] bytes)
-        {
-            var hexstring = new StringBuilder(bytes.Length);
-            for(int i = 0; i < bytes.Length;i++)
-            {
-                hexstring.Append(bytes[i].ToString("X2"));
-            }
-            return hexstring.ToString();
-        }
-
-        //Sign source text with private key
-        private void signtext_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Encrypts the source text with the private key
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void encryptText_Click(object sender, EventArgs e)
         {
                 try
                 {
@@ -67,19 +95,11 @@ namespace RSA_Tool
                 pictureBox_createKeys.BackColor = Color.Transparent;
         }
 
-        //HEX to Bytes
-        public static byte[] StringToByteArray(String hex)
-        {
-            int numberChars = hex.Length;
-            var bytes = new byte[numberChars / 2];
-            for (int i = 0; i < numberChars; i+=2)
-            {
-                bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
-            }
-            return bytes;
-        }
-
-        //Check if source text and signature matches
+        /// <summary>
+        /// Checks the signatrue for validity with the public key
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checksign_Click(object sender, EventArgs e)
         {
             bool signOK = false;

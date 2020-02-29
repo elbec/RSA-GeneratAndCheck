@@ -119,9 +119,9 @@
             this.signtext.Name = "signtext";
             this.signtext.Size = new System.Drawing.Size(66, 61);
             this.signtext.TabIndex = 7;
-            this.signtext.Text = "Sign Text";
+            this.signtext.Text = "Encrypt Source Text";
             this.signtext.UseVisualStyleBackColor = false;
-            this.signtext.Click += new System.EventHandler(this.signtext_Click);
+            this.signtext.Click += new System.EventHandler(this.encryptText_Click);
             // 
             // textBoxSourceText
             // 
@@ -147,7 +147,7 @@
             this.checksign.Name = "checksign";
             this.checksign.Size = new System.Drawing.Size(66, 61);
             this.checksign.TabIndex = 10;
-            this.checksign.Text = "Check Sign";
+            this.checksign.Text = "Verify Signature";
             this.checksign.UseVisualStyleBackColor = false;
             this.checksign.Click += new System.EventHandler(this.checksign_Click);
             // 
@@ -206,7 +206,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "RSA - Generate and Check Key";
-           // this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_createKeys)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign1)).EndInit();
