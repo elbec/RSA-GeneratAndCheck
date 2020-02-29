@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.textBoxPrivateKey = new System.Windows.Forms.TextBox();
             this.textBoxPublicKey = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -202,9 +203,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPublicKey);
             this.Controls.Add(this.textBoxPrivateKey);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "RSA - Generate and Check Key";
-            this.Load += new System.EventHandler(this.Form1_Load);
+           // this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_createKeys)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign1)).EndInit();
