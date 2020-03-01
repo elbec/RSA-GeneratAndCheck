@@ -1,3 +1,6 @@
+![GitHub All Releases](https://img.shields.io/github/downloads/elbec/RSA-GenerateAndCheck/total)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/elbec/RSA-GenerateAndCheck)
+
 # RSA-GenerateAndCheck
 
 The RSA-GenerateAndCheck App can be used for generate and/or check RSA-Keys.
