@@ -44,6 +44,7 @@
             this.pictureBox_Sign = new System.Windows.Forms.PictureBox();
             this.pictureBox_Sign1 = new System.Windows.Forms.PictureBox();
             this.pictureBox_check = new System.Windows.Forms.PictureBox();
+            this.btn_loadKeys = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_createKeys)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign1)).BeginInit();
@@ -183,11 +184,23 @@
             this.pictureBox_check.TabIndex = 14;
             this.pictureBox_check.TabStop = false;
             // 
+            // btn_loadKeys
+            // 
+            this.btn_loadKeys.BackColor = System.Drawing.Color.Salmon;
+            this.btn_loadKeys.Location = new System.Drawing.Point(302, 38);
+            this.btn_loadKeys.Name = "btn_loadKeys";
+            this.btn_loadKeys.Size = new System.Drawing.Size(66, 61);
+            this.btn_loadKeys.TabIndex = 15;
+            this.btn_loadKeys.Text = "Load Keys By Signature";
+            this.btn_loadKeys.UseVisualStyleBackColor = false;
+            this.btn_loadKeys.Click += new System.EventHandler(this.btn_loadKeys_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 520);
+            this.Controls.Add(this.btn_loadKeys);
             this.Controls.Add(this.pictureBox_check);
             this.Controls.Add(this.pictureBox_Sign1);
             this.Controls.Add(this.pictureBox_Sign);
@@ -232,6 +245,7 @@
         private System.Windows.Forms.PictureBox pictureBox_Sign;
         private System.Windows.Forms.PictureBox pictureBox_Sign1;
         private System.Windows.Forms.PictureBox pictureBox_check;
+        private System.Windows.Forms.Button btn_loadKeys;
     }
 }
 

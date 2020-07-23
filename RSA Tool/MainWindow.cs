@@ -2,15 +2,25 @@
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
 
 namespace RSA_Tool
 {
     public partial class MainWindow : Form
     {
+        public static Architecture.SQL Arch = new Architecture.SQL();
+        DataTable dt = new DataTable();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            //sql connection
+           
+            Arch.LoadDataTable(ref dt, Properties.Settings.Default.rsaDBConnection, "Select * from dataTable;");
+
         }
 
         /// <summary>
@@ -65,6 +75,11 @@ namespace RSA_Tool
             pictureBox_Sign.BackColor = Color.Transparent;
             pictureBox_Sign1.BackColor = Color.Transparent;
 
+            //save keys in db
+            if(dt.Rows.Count != 0)
+                Arch.RunSqlStatement(Properties.Settings.Default.rsaDBConnection, "INSERT INTO dataTable (Id, PrivateKey, PublicKey, SourceText, SignatureText) VALUES( (SELECT TOP 1 ID FROM dataTable ORDER BY ID DESC) + 1 ,'" + textBoxPrivateKey.Text + "', '" + textBoxPublicKey.Text + "', '', '')");
+            else
+                Arch.RunSqlStatement(Properties.Settings.Default.rsaDBConnection, "INSERT INTO dataTable (Id, PrivateKey, PublicKey, SourceText, SignatureText) VALUES( 0 ,'" + textBoxPrivateKey.Text + "', '" + textBoxPublicKey.Text + "', '', '')");
         }
 
         /// <summary>
@@ -74,14 +89,17 @@ namespace RSA_Tool
         /// <param name="e"></param>
         private void encryptText_Click(object sender, EventArgs e)
         {
-                try
-                {
-                    var rsa = new RSACryptoServiceProvider();
-                    rsa.FromXmlString(textBoxPrivateKey.Text);
+            try
+            {
+                var rsa = new RSACryptoServiceProvider();
+                rsa.FromXmlString(textBoxPrivateKey.Text);
 
-                    var encryptedSymmetricKey = rsa.SignData(Encoding.Unicode.GetBytes(textBoxSourceText.Text), new SHA1CryptoServiceProvider());
-                    textBoxSignature.Text = BytesToHex(encryptedSymmetricKey);
-                }
+                var encryptedSymmetricKey = rsa.SignData(Encoding.Unicode.GetBytes(textBoxSourceText.Text), new SHA1CryptoServiceProvider());
+                textBoxSignature.Text = BytesToHex(encryptedSymmetricKey);
+
+                // write to db
+                Arch.RunSqlStatement(Properties.Settings.Default.rsaDBConnection, "UPDATE dataTable SET SourceText = '" + textBoxSourceText.Text + "', SignatureText = '" + textBoxSignature.Text + "' WHERE PrivateKey = '" + textBoxPrivateKey.Text + "'");
+            }
                 catch
                 {
                     MessageBox.Show("Wrong private and/or public key!");
@@ -128,5 +146,15 @@ namespace RSA_Tool
             MessageBox.Show("Signature and source text matches: " + signOK);
         }
 
+        private void btn_loadKeys_Click(object sender, EventArgs e)
+        {
+            DataTable searchedRows = new DataTable();
+            Arch.LoadDataTable(ref searchedRows, Properties.Settings.Default.rsaDBConnection, "Select * from dataTable where SignatureText = '" + textBoxSignature.Text + "'");
+
+            if (searchedRows.Rows.Count > 0) {
+                textBoxPrivateKey.Text = searchedRows.Rows[0]["PrivateKey"].ToString();
+                textBoxPublicKey.Text = searchedRows.Rows[0]["PublicKey"].ToString();
+            }
+        }
     }
 }
