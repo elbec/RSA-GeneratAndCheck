@@ -199,5 +199,11 @@ namespace RSA_Tool
             SettingsWindow settingsWindow = new SettingsWindow();
             settingsWindow.ShowDialog();
         }
+
+        private void btn_createLicenseFile_Click(object sender, EventArgs e)
+        {
+            CreateLicenseFile clf = new CreateLicenseFile();
+            clf.GenerateFile(textBoxSourceText.Text, textBoxSignature.Text);
+        }
     }
 }
