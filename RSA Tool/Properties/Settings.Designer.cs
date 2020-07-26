@@ -23,15 +23,15 @@ namespace RSA_Tool.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\elbec\\Documents\\Vis" +
-            "ual Studio 2015\\Projects\\RSA-GenerateAndCheck\\RSA Tool\\rsaDB.mdf\";Integrated Sec" +
-            "urity=True")]
-        public string rsaDBConnection {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dataBasePath {
             get {
-                return ((string)(this["rsaDBConnection"]));
+                return ((string)(this["dataBasePath"]));
+            }
+            set {
+                this["dataBasePath"] = value;
             }
         }
     }
