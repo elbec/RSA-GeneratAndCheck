@@ -14,7 +14,6 @@ namespace RSA_Tool
 
         }
 
-
         struct LicenseData
         {
             public string Comment;
@@ -80,9 +79,7 @@ namespace RSA_Tool
                         new XElement("Quantity", licData.Quantity)
                     )
                 );
-
                 XElement features = new XElement("Features");
-
                 foreach (string feature in licData.Features)
                 {
                     features.Add(new XElement("Feature", feature));
