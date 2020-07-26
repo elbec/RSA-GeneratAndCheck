@@ -47,6 +47,7 @@
             this.btn_loadKeys = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_createLicenseFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_createKeys)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign1)).BeginInit();
@@ -215,11 +216,23 @@
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
+            // btn_createLicenseFile
+            // 
+            this.btn_createLicenseFile.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_createLicenseFile.Location = new System.Drawing.Point(302, 368);
+            this.btn_createLicenseFile.Name = "btn_createLicenseFile";
+            this.btn_createLicenseFile.Size = new System.Drawing.Size(66, 61);
+            this.btn_createLicenseFile.TabIndex = 17;
+            this.btn_createLicenseFile.Text = "Create License File";
+            this.btn_createLicenseFile.UseVisualStyleBackColor = false;
+            this.btn_createLicenseFile.Click += new System.EventHandler(this.btn_createLicenseFile_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 532);
+            this.Controls.Add(this.btn_createLicenseFile);
             this.Controls.Add(this.btn_loadKeys);
             this.Controls.Add(this.pictureBox_check);
             this.Controls.Add(this.pictureBox_Sign1);
@@ -272,6 +285,7 @@
         private System.Windows.Forms.Button btn_loadKeys;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.Button btn_createLicenseFile;
     }
 }
 
