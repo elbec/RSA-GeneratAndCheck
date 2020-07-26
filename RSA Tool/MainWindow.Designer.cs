@@ -45,15 +45,18 @@
             this.pictureBox_Sign1 = new System.Windows.Forms.PictureBox();
             this.pictureBox_check = new System.Windows.Forms.PictureBox();
             this.btn_loadKeys = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_createKeys)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_check)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxPrivateKey
             // 
-            this.textBoxPrivateKey.Location = new System.Drawing.Point(37, 39);
+            this.textBoxPrivateKey.Location = new System.Drawing.Point(37, 51);
             this.textBoxPrivateKey.Multiline = true;
             this.textBoxPrivateKey.Name = "textBoxPrivateKey";
             this.textBoxPrivateKey.Size = new System.Drawing.Size(250, 200);
@@ -61,7 +64,7 @@
             // 
             // textBoxPublicKey
             // 
-            this.textBoxPublicKey.Location = new System.Drawing.Point(382, 39);
+            this.textBoxPublicKey.Location = new System.Drawing.Point(382, 51);
             this.textBoxPublicKey.Multiline = true;
             this.textBoxPublicKey.Name = "textBoxPublicKey";
             this.textBoxPublicKey.Size = new System.Drawing.Size(250, 200);
@@ -70,7 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 17);
+            this.label1.Location = new System.Drawing.Point(38, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 2;
@@ -79,7 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(380, 17);
+            this.label2.Location = new System.Drawing.Point(380, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 3;
@@ -88,7 +91,7 @@
             // createKeys
             // 
             this.createKeys.BackColor = System.Drawing.Color.Salmon;
-            this.createKeys.Location = new System.Drawing.Point(302, 39);
+            this.createKeys.Location = new System.Drawing.Point(302, 51);
             this.createKeys.Name = "createKeys";
             this.createKeys.Size = new System.Drawing.Size(66, 61);
             this.createKeys.TabIndex = 4;
@@ -98,7 +101,7 @@
             // 
             // textBoxSignature
             // 
-            this.textBoxSignature.Location = new System.Drawing.Point(382, 289);
+            this.textBoxSignature.Location = new System.Drawing.Point(382, 301);
             this.textBoxSignature.Multiline = true;
             this.textBoxSignature.Name = "textBoxSignature";
             this.textBoxSignature.Size = new System.Drawing.Size(250, 200);
@@ -107,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(380, 273);
+            this.label3.Location = new System.Drawing.Point(380, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 6;
@@ -116,7 +119,7 @@
             // signtext
             // 
             this.signtext.BackColor = System.Drawing.Color.YellowGreen;
-            this.signtext.Location = new System.Drawing.Point(302, 289);
+            this.signtext.Location = new System.Drawing.Point(302, 301);
             this.signtext.Name = "signtext";
             this.signtext.Size = new System.Drawing.Size(66, 61);
             this.signtext.TabIndex = 7;
@@ -126,7 +129,7 @@
             // 
             // textBoxSourceText
             // 
-            this.textBoxSourceText.Location = new System.Drawing.Point(41, 289);
+            this.textBoxSourceText.Location = new System.Drawing.Point(41, 301);
             this.textBoxSourceText.Multiline = true;
             this.textBoxSourceText.Name = "textBoxSourceText";
             this.textBoxSourceText.Size = new System.Drawing.Size(250, 200);
@@ -135,7 +138,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 273);
+            this.label4.Location = new System.Drawing.Point(38, 285);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 9;
@@ -144,7 +147,7 @@
             // checksign
             // 
             this.checksign.BackColor = System.Drawing.Color.DodgerBlue;
-            this.checksign.Location = new System.Drawing.Point(302, 428);
+            this.checksign.Location = new System.Drawing.Point(302, 440);
             this.checksign.Name = "checksign";
             this.checksign.Size = new System.Drawing.Size(66, 61);
             this.checksign.TabIndex = 10;
@@ -154,7 +157,7 @@
             // 
             // pictureBox_createKeys
             // 
-            this.pictureBox_createKeys.Location = new System.Drawing.Point(37, 245);
+            this.pictureBox_createKeys.Location = new System.Drawing.Point(37, 257);
             this.pictureBox_createKeys.Name = "pictureBox_createKeys";
             this.pictureBox_createKeys.Size = new System.Drawing.Size(595, 15);
             this.pictureBox_createKeys.TabIndex = 11;
@@ -162,7 +165,7 @@
             // 
             // pictureBox_Sign
             // 
-            this.pictureBox_Sign.Location = new System.Drawing.Point(16, 495);
+            this.pictureBox_Sign.Location = new System.Drawing.Point(16, 507);
             this.pictureBox_Sign.Name = "pictureBox_Sign";
             this.pictureBox_Sign.Size = new System.Drawing.Size(637, 15);
             this.pictureBox_Sign.TabIndex = 12;
@@ -170,7 +173,7 @@
             // 
             // pictureBox_Sign1
             // 
-            this.pictureBox_Sign1.Location = new System.Drawing.Point(16, 39);
+            this.pictureBox_Sign1.Location = new System.Drawing.Point(16, 51);
             this.pictureBox_Sign1.Name = "pictureBox_Sign1";
             this.pictureBox_Sign1.Size = new System.Drawing.Size(15, 457);
             this.pictureBox_Sign1.TabIndex = 13;
@@ -178,7 +181,7 @@
             // 
             // pictureBox_check
             // 
-            this.pictureBox_check.Location = new System.Drawing.Point(638, 38);
+            this.pictureBox_check.Location = new System.Drawing.Point(638, 50);
             this.pictureBox_check.Name = "pictureBox_check";
             this.pictureBox_check.Size = new System.Drawing.Size(15, 457);
             this.pictureBox_check.TabIndex = 14;
@@ -187,7 +190,7 @@
             // btn_loadKeys
             // 
             this.btn_loadKeys.BackColor = System.Drawing.Color.Violet;
-            this.btn_loadKeys.Location = new System.Drawing.Point(302, 178);
+            this.btn_loadKeys.Location = new System.Drawing.Point(302, 190);
             this.btn_loadKeys.Name = "btn_loadKeys";
             this.btn_loadKeys.Size = new System.Drawing.Size(66, 61);
             this.btn_loadKeys.TabIndex = 15;
@@ -195,11 +198,28 @@
             this.btn_loadKeys.UseVisualStyleBackColor = false;
             this.btn_loadKeys.Click += new System.EventHandler(this.btn_loadData_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(668, 24);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 520);
+            this.ClientSize = new System.Drawing.Size(668, 532);
             this.Controls.Add(this.btn_loadKeys);
             this.Controls.Add(this.pictureBox_check);
             this.Controls.Add(this.pictureBox_Sign1);
@@ -216,13 +236,17 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPublicKey);
             this.Controls.Add(this.textBoxPrivateKey);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "RSA - Generate and Check Key";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_createKeys)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_check)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +270,8 @@
         private System.Windows.Forms.PictureBox pictureBox_Sign1;
         private System.Windows.Forms.PictureBox pictureBox_check;
         private System.Windows.Forms.Button btn_loadKeys;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 
