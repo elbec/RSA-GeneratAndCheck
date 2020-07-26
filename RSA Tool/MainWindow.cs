@@ -4,23 +4,20 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data;
 using System.Security.Cryptography;
-using System.Data.SqlClient;
 
 namespace RSA_Tool
 {
     public partial class MainWindow : Form
     {
-        public static Architecture.SQL Arch = new Architecture.SQL();
+        private static Architecture.SQL Arch = new Architecture.SQL();
         DataTable dt = new DataTable();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            //sql connection
-           
+            //load data to DataTable
             Arch.LoadDataTable(ref dt, Properties.Settings.Default.rsaDBConnection, "Select * from dataTable;");
-
         }
 
         /// <summary>
@@ -74,12 +71,6 @@ namespace RSA_Tool
             pictureBox_check.BackColor = Color.Transparent;
             pictureBox_Sign.BackColor = Color.Transparent;
             pictureBox_Sign1.BackColor = Color.Transparent;
-
-            //save keys in db
-            if(dt.Rows.Count != 0)
-                Arch.RunSqlStatement(Properties.Settings.Default.rsaDBConnection, "INSERT INTO dataTable (Id, PrivateKey, PublicKey, SourceText, SignatureText) VALUES( (SELECT TOP 1 ID FROM dataTable ORDER BY ID DESC) + 1 ,'" + textBoxPrivateKey.Text + "', '" + textBoxPublicKey.Text + "', '', '')");
-            else
-                Arch.RunSqlStatement(Properties.Settings.Default.rsaDBConnection, "INSERT INTO dataTable (Id, PrivateKey, PublicKey, SourceText, SignatureText) VALUES( 0 ,'" + textBoxPrivateKey.Text + "', '" + textBoxPublicKey.Text + "', '', '')");
         }
 
         /// <summary>
@@ -97,12 +88,15 @@ namespace RSA_Tool
                 var encryptedSymmetricKey = rsa.SignData(Encoding.Unicode.GetBytes(textBoxSourceText.Text), new SHA1CryptoServiceProvider());
                 textBoxSignature.Text = BytesToHex(encryptedSymmetricKey);
 
-                // write to db
-                Arch.RunSqlStatement(Properties.Settings.Default.rsaDBConnection, "UPDATE dataTable SET SourceText = '" + textBoxSourceText.Text + "', SignatureText = '" + textBoxSignature.Text + "' WHERE PrivateKey = '" + textBoxPrivateKey.Text + "'");
+                //save keys in db
+                if (dt.Rows.Count != 0)
+                    Arch.RunSqlStatement(Properties.Settings.Default.rsaDBConnection, "INSERT INTO dataTable (Id, PrivateKey, PublicKey, SourceText, SignatureText) VALUES( (SELECT TOP 1 ID FROM dataTable ORDER BY ID DESC) + 1 ,'" + textBoxPrivateKey.Text + "', '" + textBoxPublicKey.Text + "', '" + textBoxSourceText.Text + "', '" + textBoxSignature.Text + "')");
+                else
+                    Arch.RunSqlStatement(Properties.Settings.Default.rsaDBConnection, "INSERT INTO dataTable (Id, PrivateKey, PublicKey, SourceText, SignatureText) VALUES( 0 ,'" + textBoxPrivateKey.Text + "', '" + textBoxPublicKey.Text + "', '" + textBoxSourceText.Text + "', '" + textBoxSignature.Text + "')");
             }
-                catch
+            catch
                 {
-                    MessageBox.Show("Wrong private and/or public key!");
+                    MessageBox.Show("Wrong private and/or public key!", "Wrong keys", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -133,7 +127,7 @@ namespace RSA_Tool
             }
             catch
             {
-                MessageBox.Show("Wrong private and/or public key!");
+                MessageBox.Show("Wrong private and/or public key!", "Wrong keys", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -143,10 +137,10 @@ namespace RSA_Tool
             pictureBox_createKeys.BackColor = Color.Transparent;
             pictureBox_Sign1.BackColor = Color.Transparent;
 
-            MessageBox.Show("Signature and source text matches: " + signOK);
+            MessageBox.Show("Signature and source text matches: " + signOK, "Signature Verification", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btn_loadKeys_Click(object sender, EventArgs e)
+        private void btn_loadData_Click(object sender, EventArgs e)
         {
             DataTable searchedRows = new DataTable();
             Arch.LoadDataTable(ref searchedRows, Properties.Settings.Default.rsaDBConnection, "Select * from dataTable where SignatureText = '" + textBoxSignature.Text + "'");
@@ -154,6 +148,13 @@ namespace RSA_Tool
             if (searchedRows.Rows.Count > 0) {
                 textBoxPrivateKey.Text = searchedRows.Rows[0]["PrivateKey"].ToString();
                 textBoxPublicKey.Text = searchedRows.Rows[0]["PublicKey"].ToString();
+                textBoxSourceText.Text = searchedRows.Rows[0]["SourceText"].ToString();
+            } else
+            {
+                textBoxPrivateKey.Text = String.Empty;
+                textBoxPublicKey.Text = String.Empty;
+                textBoxSourceText.Text = String.Empty;
+                MessageBox.Show("No data with this signature was found!", "Wrong Signature", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
