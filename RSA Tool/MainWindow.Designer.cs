@@ -44,6 +44,7 @@
             this.pictureBox_Sign = new System.Windows.Forms.PictureBox();
             this.pictureBox_Sign1 = new System.Windows.Forms.PictureBox();
             this.pictureBox_check = new System.Windows.Forms.PictureBox();
+            this.btn_loadKeys = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_createKeys)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Sign1)).BeginInit();
@@ -71,23 +72,23 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "private key";
+            this.label1.Text = "Private Key";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(380, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "public key";
+            this.label2.Text = "Public Key";
             // 
             // createKeys
             // 
             this.createKeys.BackColor = System.Drawing.Color.Salmon;
-            this.createKeys.Location = new System.Drawing.Point(302, 178);
+            this.createKeys.Location = new System.Drawing.Point(302, 39);
             this.createKeys.Name = "createKeys";
             this.createKeys.Size = new System.Drawing.Size(66, 61);
             this.createKeys.TabIndex = 4;
@@ -108,9 +109,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(380, 273);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "signature";
+            this.label3.Text = "Signature";
             // 
             // signtext
             // 
@@ -119,7 +120,7 @@
             this.signtext.Name = "signtext";
             this.signtext.Size = new System.Drawing.Size(66, 61);
             this.signtext.TabIndex = 7;
-            this.signtext.Text = "Encrypt Source Text";
+            this.signtext.Text = "Encrypt Source Text And Save All";
             this.signtext.UseVisualStyleBackColor = false;
             this.signtext.Click += new System.EventHandler(this.encryptText_Click);
             // 
@@ -136,9 +137,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(38, 273);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "source text";
+            this.label4.Text = "Source Text";
             // 
             // checksign
             // 
@@ -183,11 +184,23 @@
             this.pictureBox_check.TabIndex = 14;
             this.pictureBox_check.TabStop = false;
             // 
+            // btn_loadKeys
+            // 
+            this.btn_loadKeys.BackColor = System.Drawing.Color.Violet;
+            this.btn_loadKeys.Location = new System.Drawing.Point(302, 178);
+            this.btn_loadKeys.Name = "btn_loadKeys";
+            this.btn_loadKeys.Size = new System.Drawing.Size(66, 61);
+            this.btn_loadKeys.TabIndex = 15;
+            this.btn_loadKeys.Text = "Load Data By Signature";
+            this.btn_loadKeys.UseVisualStyleBackColor = false;
+            this.btn_loadKeys.Click += new System.EventHandler(this.btn_loadData_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 520);
+            this.Controls.Add(this.btn_loadKeys);
             this.Controls.Add(this.pictureBox_check);
             this.Controls.Add(this.pictureBox_Sign1);
             this.Controls.Add(this.pictureBox_Sign);
@@ -232,6 +245,7 @@
         private System.Windows.Forms.PictureBox pictureBox_Sign;
         private System.Windows.Forms.PictureBox pictureBox_Sign1;
         private System.Windows.Forms.PictureBox pictureBox_check;
+        private System.Windows.Forms.Button btn_loadKeys;
     }
 }
 
