@@ -116,6 +116,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Architecture.dll" />
+    <Content Include="Architecture.pdb" />
     <Content Include="Documentation\rsa_app.JPG" />
     <Content Include="IconKey Kopie.ico" />
     <Content Include="rsaDB.mdf">
