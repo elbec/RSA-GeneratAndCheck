@@ -119,9 +119,12 @@
     <Content Include="Architecture.dll" />
     <Content Include="Documentation\rsa_app.JPG" />
     <Content Include="IconKey Kopie.ico" />
-    <Content Include="rsaDB.mdf" />
+    <Content Include="rsaDB.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="rsaDB_log.ldf">
       <DependentUpon>rsaDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
