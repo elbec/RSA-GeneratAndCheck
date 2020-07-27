@@ -117,14 +117,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Architecture.dll" />
-    <Content Include="Architecture.pdb" />
     <Content Include="Documentation\rsa_app.JPG" />
     <Content Include="IconKey Kopie.ico" />
-    <Content Include="rsaDB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="rsaDB.mdf" />
     <Content Include="rsaDB_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>rsaDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
