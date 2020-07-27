@@ -54,7 +54,7 @@
   <ItemGroup>
     <Reference Include="Architecture">
       <HintPath>..\..\Architecture\Architecture\bin\Debug\Architecture.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -118,11 +118,11 @@
   <ItemGroup>
     <Content Include="Documentation\rsa_app.JPG" />
     <Content Include="IconKey Kopie.ico" />
-    <EmbeddedResource Include="rsaDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Content Include="rsaDB.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="rsaDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>rsaDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
