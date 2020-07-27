@@ -54,6 +54,7 @@
   <ItemGroup>
     <Reference Include="Architecture">
       <HintPath>..\..\Architecture\Architecture\bin\Debug\Architecture.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
