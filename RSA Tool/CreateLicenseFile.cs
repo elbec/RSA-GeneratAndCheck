@@ -8,7 +8,6 @@ namespace RSA_Tool
 {
     public partial class CreateLicenseFile
     {
-
         public CreateLicenseFile()
         {
 
@@ -24,7 +23,6 @@ namespace RSA_Tool
             public string CustomerName;
             public string CustomerEmail;
         }
-
 
         public void GenerateFile(string sourceText, string signatureText)
         {
