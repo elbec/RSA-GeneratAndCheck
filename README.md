@@ -3,7 +3,7 @@
 
 # RSA-GenerateAndCheck
 
-The RSA-GenerateAndCheck App can be used for generate and/or check RSA-Keys.
+The RSA-GenerateAndCheck App can be used for generate and/or check RSA-Keys. The generated signature can be exported as a xml license file.
 
 Tags: RSA, RSA-Key, generate key, check key, private key, public key, encrypt, xml export, database, signature import, signature check, license file creator
 
