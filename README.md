@@ -5,7 +5,7 @@
 
 The RSA-GenerateAndCheck App can be used for generate and/or check RSA-Keys.
 
-Tags: RSA, RSA-Key, generate key, check key, private key, public key, encrypt
+Tags: RSA, RSA-Key, generate key, check key, private key, public key, encrypt, xml export, database, signature import, signature check, license file creator
 
 ![appOverview](https://github.com/elbec/RSA-GenerateAndCheck/blob/master/RSA%20Tool/Documentation/rsa.gif?raw=true)
 
